@@ -7,7 +7,7 @@ The purpose of this project was to design a database for a scenario chosen by th
 
 * **Gabriela de Mattos** upxxxx - [gab1demattos](https://github.com/gab1demattos)
 * **Leonor Matias** up202303772 - [leonor](https://github.com/le0nor)
-* **Matilde Sousa** upxxxx - [matilde-sousa](https://github.com/matilde-sousa)
+* **Matilde Sousa** up202305502 - [matilde-sousa](https://github.com/matilde-sousa)
 
 ### Evaluation
 
