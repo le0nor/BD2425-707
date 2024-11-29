@@ -1,95 +1,117 @@
+
+-- ON DELETE / ON UPDATE ????????  NAS FK
+-- CONSTRAINT
+-- default values?
+
 DROP TABLE IF EXISTS Person;
-DROP TABLE IF EXISTS Model;
-DROP TABLE IF EXISTS Designer;
-DROP TABLE IF EXISTS Spectator;
-DROP TABLE IF EXISTS Influencer;
-DROP TABLE IF EXISTS Media;
-DROP TABLE IF EXISTS Technician;
-DROP TABLE IF EXISTS LocalTechnician;
-DROP TABLE IF EXISTS StylingTechnician;
-DROP TABLE IF EXISTS Runway;
-DROP TABLE IF EXISTS Model_Runway;
-DROP TABLE IF EXISTS Event;
-DROP TABLE IF EXISTS Sponsor;
-DROP TABLE IF EXISTS Ticket;
-DROP TABLE IF EXISTS Brand;
-DROP TABLE IF EXISTS Collection;
-DROP TABLE IF EXISTS FashionPiece;
 
 CREATE TABLE Person (
     idPerson INTEGER PRIMARY KEY,
     Name TEXT NOT NULL,
     Email TEXT UNIQUE NOT NULL,
-    Age INTEGER,
-    CHECK (Age >= 10 AND Age <= 100)
+    Age INTEGER NOT NULL,
+    CHECK (Age >= 10 AND Age <= 200)
 );
 
+
+DROP TABLE IF EXISTS Model;
+
 CREATE TABLE Model (
-    idPerson INTEGER REFERENCES Person(idPerson) NOT NULL,
+    idPerson INTEGER REFERENCES Person(idPerson) NOT NULL ON UPDATE CASCADE ON DELETE RESTRICT,
     Nationality TEXT,
     Bust INTEGER NOT NULL CHECK (Bust > 10 AND Bust < 100),
     Waist INTEGER NOT NULL CHECK (Waist > 10 AND Waist < 100),
     Hips INTEGER NOT NULL CHECK (Hips > 10 AND Hips < 100),
     Height INTEGER NOT NULL CHECK (Height > 100 AND Height < 250),
-    Weigth INTEGER NOT NULL CHECK (Bust > 10 AND Bust < 1000),
-    Health Problems TEXT,
-
+    Weight INTEGER NOT NULL CHECK (Weight > 10 AND Weight < 1000),
+    HealthIssues TEXT DEFAULT NULL,
 );
+
+
+DROP TABLE IF EXISTS Designer;
 
 CREATE TABLE Designer (
-    idPerson INTEGER REFERENCES Person(idPerson) NOT NULL,
-    Nationality TEXT,
-    Photography,   -- type???
-    Biogrphy   -- type???
+    idPerson INTEGER REFERENCES Person(idPerson) NOT NULL ON UPDATE CASCADE ON DELETE RESTRICT,
+    Nationality TEXT DEFAULT NULL,
+    Photography TEXT DEFAULT NULL,   -- URL
+    Biography TEXT DEFAULT NULL  
 );
+
+
+DROP TABLE IF EXISTS Spectator;
 
 CREATE TABLE Spectator (
-    idPerson INTEGER REFERENCES Person(idPerson) NOT NULL,
-    Saet INTEGER NOT NULL   -- int ??
+    idPerson INTEGER REFERENCES Person(idPerson) NOT NULL ON UPDATE CASCADE ON DELETE RESTRICT,
+    Seat INTEGER NOT NULL   
 );
 
+
+DROP TABLE IF EXISTS Influencer;
+
 CREATE TABLE Influencer (
-    idPerson INTEGER REFERENCES Spectator(idPerson) NOT NULL,
+    idPerson INTEGER REFERENCES Spectator(idPerson) NOT NULL ON UPDATE CASCADE ON DELETE RESTRICT,
     NumFollowers INTEGER NOT NULL,
     IntagramHandle TEXT NOT NULL
 );
 
+
+DROP TABLE IF EXISTS Media;
+
 CREATE TABLE Media (
-    idPerson INTEGER REFERENCES Spectator(idPerson) NOT NULL,
+    idPerson INTEGER REFERENCES Spectator(idPerson) NOT NULL ON UPDATE CASCADE ON DELETE RESTRICT,
     Occupation TEXT NOT NULL,
     MeansofCommunication TEXT NOT NULL
 );
 
+
+DROP TABLE IF EXISTS Technician;
+
 CREATE TABLE Technician (
-    idPerson INTEGER REFERENCES Person(idPerson) NOT NULL,
+    idPerson INTEGER REFERENCES Person(idPerson) NOT NULL ON UPDATE CASCADE ON DELETE RESTRICT,
     Function TEXT NOT NULL,
     Material TEXT NOT NULL
 );
 
+
+DROP TABLE IF EXISTS LocalTechnician;
+
 CREATE TABLE LocalTechnician (
-    idPerson INTEGER REFERENCES Technician(idPerson) NOT NULL,
+    idPerson INTEGER REFERENCES Technician(idPerson) NOT NULL ON UPDATE CASCADE ON DELETE RESTRICT,
     Address TEXT REFERENCES Event(Address) NOT NULL,
 );
 
+
+DROP TABLE IF EXISTS StylingTechnician;
+
 CREATE TABLE StylingTechnician (
-    idPerson INTEGER REFERENCES Technician(idPerson) NOT NULL,
+    idPerson INTEGER PRIMARY KEY REFERENCES Technician(idPerson) NOT NULL ON UPDATE CASCADE ON DELETE RESTRICT,
     Model TEXT REFERENCES Model(idPerson) NOT NULL
 );
 
+
+DROP TABLE IF EXISTS Runway;
+
 CREATE TABLE Runway (
     idShow INTEGER PRIMARY KEY,
-    Address TEXT REFERENCES Event(Address),
+    Address TEXT REFERENCES Event(Address) ON UPDATE CASCADE ON DELETE RESTRICT,
     BName TEXT REFERENCES Brand(BName) NOT NULL,
     Date DATE NOT NULL,
     Time TIME NOT NULL,
-    Budget INTEGER
+    Budget INTEGER DEFAULT NULL
 );
 
+
+DROP TABLE IF EXISTS Model_Runway;
+
 CREATE TABLE Model_Runway (
-    idShow INTEGER PRIMARY KEY REFERENCES Runway(idShow),
-    Name TEXT PRIMARY KEY REFERENCES Model(Name),
+    idShow INTEGER REFERENCES Runway(idShow) ON UPDATE CASCADE ON DELETE RESTRICT,
+    idPerson TEXT REFERENCES Model(idPerson) ON UPDATE CASCADE ON DELETE RESTRICT,
     Order INTEGER NOT NULL CHECK (Order > 0 AND Order < 100),
+    PRIMARY KEY (idShow, idPerson)
 );
+
+
+DROP TABLE IF EXISTS Event;
 
 CREATE TABLE Event (
     Address TEXT PRIMARY KEY,
@@ -97,39 +119,54 @@ CREATE TABLE Event (
     ResponsibleEntity TEXT NOT NULL
 );
 
+
+DROP TABLE IF EXISTS Sponsor;
+
 CREATE TABLE Sponsor (
-    Company TEXT NOT NULL,
+    Company TEXT PRIMARY KEY,
     Email TEXT NOT NULL,
     Value INTEGER NOT NULL,
-    Resources TEXT NOT NULL,    -- text ???
-    Agreements TEXT NOT NULL    -- text ??
+    Resources TEXT NOT NULL,    
+    Agreements TEXT NOT NULL    
 );
 
+
+DROP TABLE IF EXISTS Ticket;
+
 CREATE TABLE Ticket (
-    idShow INTEGER PRIMARY KEY REFERENCES Runway(idShow),
+    idShow INTEGER PRIMARY KEY REFERENCES Runway(idShow) ON UPDATE CASCADE ON DELETE RESTRICT,
     Name TEXT PRIMARY KEY REFERENCES Spectator(Name),
     Type TEXT NOT NULL,
     Status TEXT NOT NULL
 );
 
+
+DROP TABLE IF EXISTS Brand;
+
 CREATE TABLE Brand (
     BName TEXT PRIMARY KEY,
-    Representative TEXT NOT NULLL,
+    Representative TEXT NOT NULL,
     CountryofOrigin TEXT,
-    Logo   -- type??
+    LogoURL TEXT   -- URL
 );
+
+
+DROP TABLE IF EXISTS Collection;
 
 CREATE TABLE Collection (
     CName TEXT PRIMARY KEY,
-    BName TEXT REFERENCES Brand(BName) NOT NULL,
+    BName TEXT REFERENCES Brand(BName) NOT NULL ON UPDATE CASCADE ON DELETE RESTRICT,
     Season TEXT NOT NULL
 );
 
+
+DROP TABLE IF EXISTS FashionPiece;
+
 CREATE TABLE FashionPiece (
     idPiece INTEGER PRIMARY KEY,
-    Collection TEXT REFERENCES Collection(CName) NOT NULL,
-    Designer TEXT REFERENCES Designer(Name) NOT NULL,
-    Material TEXT,     -- text??
+    Collection TEXT REFERENCES Collection(CName) NOT NULL ON UPDATE CASCADE ON DELETE RESTRICT,
+    Designer TEXT REFERENCES Designer(idPerson) NOT NULL ON UPDATE CASCADE ON DELETE RESTRICT,
+    Material TEXT,     
     Color TEXT,
     Type TEXT
 );
