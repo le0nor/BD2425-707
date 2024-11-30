@@ -11,7 +11,7 @@ The purpose of this project was to design a database for a scenario chosen by th
 
 ### Evaluation
 
->**First Submission:** 18.2 
+>**First Submission:** 18.2 (40%)
 
 >**Second Submission:** 
 
