@@ -14,7 +14,8 @@ DROP TABLE IF EXISTS Model;
 
 CREATE TABLE Model (
     idPerson INTEGER    CONSTRAINT pk_idperson_model PRIMARY KEY,
-                        CONSTRAINT fk_idperson_model REFERENCES Person(idPerson) ON UPDATE CASCADE ON DELETE RESTRICT,
+                        CONSTRAINT fk_idperson_model REFERENCES Person(idPerson)    ON UPDATE CASCADE 
+                                                                                    ON DELETE RESTRICT,
     Bust INTEGER    CONSTRAINT nn_bust NOT NULL 
                     CONSTRAINT chk_bust CHECK (Bust > 10 AND Bust < 100),
     Waist INTEGER   CONSTRAINT nn_waist NOT NULL 
@@ -33,7 +34,8 @@ DROP TABLE IF EXISTS Designer;
 
 CREATE TABLE Designer (
     idPerson INTEGER    CONSTRAINT pk_idperson_designer PRIMARY KEY
-                        CONSTRAINT fk_idperson_designer REFERENCES Person(idPerson) ON UPDATE CASCADE ON DELETE RESTRICT,
+                        CONSTRAINT fk_idperson_designer REFERENCES Person(idPerson) ON UPDATE CASCADE 
+                                                                                    ON DELETE RESTRICT,
     PhotographyURL TEXT,  
     BiographyURL TEXT 
 );
@@ -43,7 +45,8 @@ DROP TABLE IF EXISTS Spectator;
 
 CREATE TABLE Spectator (
     idPerson INTEGER    CONSTRAINT pk_idperson_spectator PRIMARY KEY
-                        CONSTRAINT fk_idperson_spectator REFERENCES Person(idPerson) ON UPDATE CASCADE ON DELETE RESTRICT,                        
+                        CONSTRAINT fk_idperson_spectator REFERENCES Person(idPerson)    ON UPDATE CASCADE 
+                                                                                        ON DELETE RESTRICT,                        
     Seat INTEGER    CONSTRAINT uq_seat UNIQUE 
                     CONSTRAINT nn_seat NOT NULL   
 );
@@ -53,7 +56,8 @@ DROP TABLE IF EXISTS Influencer;
 
 CREATE TABLE Influencer (
     idPerson INTEGER    CONSTRAINT pk_idperson_influencer PRIMARY KEY
-                        CONSTRAINT fk_idperson_influencer REFERENCES Spectator(idPerson) ON UPDATE CASCADE ON DELETE RESTRICT,                        
+                        CONSTRAINT fk_idperson_influencer REFERENCES Spectator(idPerson)    ON UPDATE CASCADE 
+                                                                                            ON DELETE RESTRICT,                        
     NumFollowers INTEGER CONSTRAINT nn_numfollowers NOT NULL,
     IntagramHandle TEXT CONSTRAINT uq_insta UNIQUE  
                         CONSTRAINT nn_insta NOT NULL
@@ -64,7 +68,8 @@ DROP TABLE IF EXISTS Media;
 
 CREATE TABLE Media (
     idPerson INTEGER    CONSTRAINT pk_idperson_media PRIMARY KEY
-                        CONSTRAINT fk_idperson_media REFERENCES Spectator(idPerson) ON UPDATE CASCADE ON DELETE RESTRICT,                        
+                        CONSTRAINT fk_idperson_media REFERENCES Spectator(idPerson) ON UPDATE CASCADE 
+                                                                                    ON DELETE RESTRICT,                        
     Occupation TEXT CONSTRAINT nn_occupation_media NOT NULL,
     MeansofCommunication TEXT CONSTRAINT nn_communication_media NOT NULL
 );
@@ -74,7 +79,8 @@ DROP TABLE IF EXISTS Technician;
 
 CREATE TABLE Technician (
     idPerson INTEGER    CONSTRAINT pk_idperson_technician PRIMARY KEY
-                        CONSTRAINT fk_idperson_technician REFERENCES Person(idPerson) ON UPDATE CASCADE ON DELETE RESTRICT,                        
+                        CONSTRAINT fk_idperson_technician REFERENCES Person(idPerson)   ON UPDATE CASCADE 
+                                                                                        ON DELETE RESTRICT,                        
     Function TEXT CONSTRAINT nn_function_tech NOT NULL,
     Material TEXT CONSTRAINT nn_material_tech NOT NULL
 );
@@ -84,9 +90,10 @@ DROP TABLE IF EXISTS LocalTechnician;
 
 CREATE TABLE LocalTechnician (
     idPerson INTEGER    CONSTRAINT pk_idperson_localtechnician PRIMARY KEY
-                        CONSTRAINT fk_idperson_localtechnician REFERENCES Technician(idPerson) ON UPDATE CASCADE ON DELETE RESTRICT,
-    idEvent INTEGER CONSTRAINT fk_address_localtechnician REFERENCES Event(idEvent)
-                    CONSTRAINT nn_address_localtechnician NOT NULL
+                        CONSTRAINT fk_idperson_localtechnician REFERENCES Technician(idPerson)  ON UPDATE CASCADE 
+                                                                                                ON DELETE RESTRICT,
+    idEvent INTEGER CONSTRAINT fk_idevent_localtechnician REFERENCES Event(idEvent)
+                    CONSTRAINT nn_idevent_localtechnician NOT NULL
 );
 
 
@@ -94,14 +101,17 @@ DROP TABLE IF EXISTS StylingTechnician;
 
 CREATE TABLE Stylist (
     idPerson INTEGER    CONSTRAINT pk_idperson_stylist PRIMARY KEY    
-                        CONSTRAINT fk_idperson_stylist REFERENCES Technician(idPerson) ON UPDATE CASCADE ON DELETE RESTRICT
+                        CONSTRAINT fk_idperson_stylist REFERENCES Technician(idPerson)  ON UPDATE CASCADE 
+                                                                                        ON DELETE RESTRICT
 );
 
 DROP TABLE IF EXISTS Model_Stylist;
 
 CREATE TABLE Model_Stylist (
-    idModel INTEGER CONSTRAINT fk_idmodel_modelstylist REFERENCES Model(idPerson) ON UPDATE CASCADE ON DELETE RESTRICT,
-    idStylist INTEGER CONSTRAINT fk_idstylist_modelstylist REFERENCES Stylist(idPerson) ON UPDATE CASCADE ON DELETE RESTRICT,
+    idModel INTEGER CONSTRAINT fk_idmodel_modelstylist REFERENCES Model(idPerson)   ON UPDATE CASCADE 
+                                                                                    ON DELETE RESTRICT,
+    idStylist INTEGER CONSTRAINT fk_idstylist_modelstylist REFERENCES Stylist(idPerson) ON UPDATE CASCADE 
+                                                                                        ON DELETE RESTRICT,
     CONSTRAINT pks_modelstylist PRIMARY KEY (idModel, idStylist)
 );
 
@@ -109,10 +119,12 @@ DROP TABLE IF EXISTS Runway;
 
 CREATE TABLE Runway (
     idShow INTEGER CONSTRAINT pk_idshow_runway PRIMARY KEY,
-    idEvent INTEGER     CONSTRAINT fk_address_runway REFERENCES Event(idEvent) ON UPDATE CASCADE ON DELETE RESTRICT
-                        CONSTRAINT nn_address_runway NOT NULL,
-    idBrand INTEGER  CONSTRAINT fk_bname_runway REFERENCES Brand(idBrand) ON UPDATE CASCADE ON DELETE RESTRICT
-                     CONSTRAINT nn_bname_runway NOT NULL,
+    idEvent INTEGER     CONSTRAINT fk_idevent_runway REFERENCES Event(idEvent)  ON UPDATE CASCADE 
+                                                                                ON DELETE RESTRICT
+                        CONSTRAINT nn_idevent_runway NOT NULL,
+    idBrand INTEGER  CONSTRAINT fk_idbrand_runway REFERENCES Brand(idBrand) ON UPDATE CASCADE 
+                                                                            ON DELETE RESTRICT
+                     CONSTRAINT nn_idbrand_runway NOT NULL,
     Date DATE CONSTRAINT nn_date_runway NOT NULL,
     Time TIME CONSTRAINT nn_time_runway NOT NULL,
     Budget NUMERIC       
@@ -122,8 +134,10 @@ CREATE TABLE Runway (
 DROP TABLE IF EXISTS Model_Runway;
 
 CREATE TABLE Model_Runway (
-    idShow INTEGER  CONSTRAINT fk_idshow_modelrunway REFERENCES Runway(idShow) ON UPDATE CASCADE ON DELETE RESTRICT,
-    idModel INTEGER CONSTRAINT fk_idmodel_modelrunway REFERENCES Model(idPerson) ON UPDATE CASCADE ON DELETE RESTRICT,
+    idShow INTEGER  CONSTRAINT fk_idshow_modelrunway REFERENCES Runway(idShow)  ON UPDATE CASCADE 
+                                                                                ON DELETE RESTRICT,
+    idModel INTEGER CONSTRAINT fk_idmodel_modelrunway REFERENCES Model(idPerson)    ON UPDATE CASCADE 
+                                                                                    ON DELETE RESTRICT,
     Order INTEGER   CONSTRAINT nn_order NOT NULL 
                     CONSTRAINT chk_order CHECK (Order > 0 AND Order < 100),
     CONSTRAINT pks_modelrunway PRIMARY KEY (idShow, idModel)
@@ -159,9 +173,11 @@ DROP TABLE IF EXISTS Ticket;
 
 CREATE TABLE Ticket (
     idTicket INTEGER CONSTRAINT pk_idticket PRIMARY KEY,
-    idShow INTEGER  CONSTRAINT fk_idshow_ticket REFERENCES Runway(idShow) ON UPDATE CASCADE ON DELETE RESTRICT
+    idShow INTEGER  CONSTRAINT fk_idshow_ticket REFERENCES Runway(idShow)   ON UPDATE CASCADE 
+                                                                            ON DELETE RESTRICT
                     CONSTRAINT nn_idshow_ticket NOT NULL,
-    idPerson INTEGER    CONSTRAINT fk_idperson_ticket REFERENCES Spectator(idPerson) ON UPDATE CASCADE ON DELETE RESTRICT
+    idPerson INTEGER    CONSTRAINT fk_idperson_ticket REFERENCES Spectator(idPerson)    ON UPDATE CASCADE 
+                                                                                        ON DELETE RESTRICT
                         CONSTRAINT nn_idperson_ticket NOT NULL,
     Type TEXT   CONSTRAINT nn_type_ticket NOT NULL 
                 CONSTRAINT chk_type_ticket CHECK (Type IN ('VIP', 'Regular', 'Media')),
@@ -189,7 +205,8 @@ CREATE TABLE Collection (
     idCollection INTEGER CONSTRAINT pk_idcollection PRIMARY KEY,
     CName TEXT  CONSTRAINT uq_cname UNIQUE 
                 CONSTRAINT nn_cname NOT NULL,
-    idBrand INTEGER CONSTRAINT fk_idbrand_collection REFERENCES Brand(idBrand) ON UPDATE CASCADE ON DELETE RESTRICT
+    idBrand INTEGER CONSTRAINT fk_idbrand_collection REFERENCES Brand(idBrand)  ON UPDATE CASCADE 
+                                                                                ON DELETE RESTRICT
                     CONSTRAINT nn_idbrand_collection NOT NULL,
     Season TEXT CONSTRAINT nn_season_collection NOT NULL
 );
@@ -198,9 +215,11 @@ DROP TABLE IF EXISTS FashionPiece;
 
 CREATE TABLE FashionPiece (
     idPiece INTEGER CONSTRAINT pk_idpiece_fashionpiece PRIMARY KEY,
-    idCollection INTEGER    CONSTRAINT fk_idcollection_fashionpiece REFERENCES Collection(idCollection) ON UPDATE CASCADE ON DELETE RESTRICT
+    idCollection INTEGER    CONSTRAINT fk_idcollection_fashionpiece REFERENCES Collection(idCollection) ON UPDATE CASCADE 
+                                                                                                        ON DELETE RESTRICT
                             CONSTRAINT nn_collection_fashionpiece NOT NULL,
-    idPerson INTEGER    CONSTRAINT fk_idperson_fashionpiece REFERENCES Designer(idPerson) ON UPDATE CASCADE ON DELETE RESTRICT
+    idPerson INTEGER    CONSTRAINT fk_idperson_fashionpiece REFERENCES Designer(idPerson)   ON UPDATE CASCADE 
+                                                                                            ON DELETE RESTRICT
                         CONSTRAINT nn_idperson_fashionpiece NOT NULL,
     Material TEXT,     
     Color TEXT,

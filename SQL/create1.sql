@@ -1,8 +1,3 @@
-
--- ON DELETE / ON UPDATE ????????  NAS FK
--- CONSTRAINT
--- default values?
-
 DROP TABLE IF EXISTS Person;
 
 CREATE TABLE Person (
