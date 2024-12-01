@@ -13,7 +13,7 @@ CREATE TABLE Person (
 DROP TABLE IF EXISTS Model;
 
 CREATE TABLE Model (
-    idPerson INTEGER    CONSTRAINT pk_idperson_model PRIMARY KEY,
+    idPerson INTEGER    CONSTRAINT pk_idperson_model PRIMARY KEY
                         CONSTRAINT fk_idperson_model REFERENCES Person(idPerson)    ON UPDATE CASCADE 
                                                                                     ON DELETE RESTRICT,
     Bust INTEGER    CONSTRAINT nn_bust NOT NULL 
@@ -59,7 +59,7 @@ CREATE TABLE Influencer (
                         CONSTRAINT fk_idperson_influencer REFERENCES Spectator(idPerson)    ON UPDATE CASCADE 
                                                                                             ON DELETE RESTRICT,                        
     NumFollowers INTEGER CONSTRAINT nn_numfollowers NOT NULL,
-    IntagramHandle TEXT CONSTRAINT uq_insta UNIQUE  
+    InstagramHandle TEXT CONSTRAINT uq_insta UNIQUE  
                         CONSTRAINT nn_insta NOT NULL
 );
 
@@ -138,8 +138,8 @@ CREATE TABLE Model_Runway (
                                                                                 ON DELETE RESTRICT,
     idModel INTEGER CONSTRAINT fk_idmodel_modelrunway REFERENCES Model(idPerson)    ON UPDATE CASCADE 
                                                                                     ON DELETE RESTRICT,
-    Order INTEGER   CONSTRAINT nn_order NOT NULL 
-                    CONSTRAINT chk_order CHECK (Order > 0 AND Order < 100),
+    "Order" INTEGER   CONSTRAINT nn_order NOT NULL 
+                    CONSTRAINT chk_order CHECK ("Order" > 0 AND "Order" < 100),
     CONSTRAINT pks_modelrunway PRIMARY KEY (idShow, idModel)
 );
 
@@ -183,7 +183,7 @@ CREATE TABLE Ticket (
                 CONSTRAINT chk_type_ticket CHECK (Type IN ('VIP', 'Regular', 'Media')),
     Status TEXT CONSTRAINT nn_status_ticket NOT NULL 
                 CONSTRAINT default_status_ticket DEFAULT 'Valid' 
-                CONSTRAINT chk_status_ticket CHECK (Status IN ('Valid', 'Used', 'Expired')),
+                CONSTRAINT chk_status_ticket CHECK (Status IN ('Valid', 'Used', 'Expired'))
 );
 
 
