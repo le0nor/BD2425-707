@@ -97,7 +97,7 @@ CREATE TABLE LocalTechnician (
 );
 
 
-DROP TABLE IF EXISTS StylingTechnician;
+DROP TABLE IF EXISTS Stylist;
 
 CREATE TABLE Stylist (
     idPerson INTEGER    CONSTRAINT pk_idperson_stylist PRIMARY KEY    
@@ -151,7 +151,7 @@ CREATE TABLE Event (
     Address TEXT CONSTRAINT nn_address_event NOT NULL,
     Budget NUMERIC  CONSTRAINT nn_budget_event NOT NULL 
                     CONSTRAINT chk_budget_event CHECK (Budget > 0),
-    ResponsibleEntity TEXT CONSTRAINT nn_responsibleentity_event NOT NULL
+    OrganizingCompany TEXT CONSTRAINT nn_organizingcompany_event NOT NULL
 );
 
 
