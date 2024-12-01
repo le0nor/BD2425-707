@@ -106,7 +106,7 @@ DROP TABLE IF EXISTS Model_Runway;
 CREATE TABLE Model_Runway (
     idShow INTEGER REFERENCES Runway(idShow) ON UPDATE CASCADE ON DELETE RESTRICT,
     idModel TEXT REFERENCES Model(idPerson) ON UPDATE CASCADE ON DELETE RESTRICT,
-    Order INTEGER NOT NULL CHECK (Order > 0 AND Order < 100),
+    "Order" INTEGER NOT NULL CHECK ("Order" > 0 AND "Order" < 100),
     PRIMARY KEY (idShow, idPerson)
 );
 
@@ -117,7 +117,7 @@ CREATE TABLE Event (
     idEvent INTEGER PRIMARY KEY,
     Address TEXT NOT NULL,
     Budget INTEGER NOT NULL,
-    ResponsibleEntity TEXT NOT NULL
+    OrganizingCompany TEXT NOT NULL
 );
 
 
@@ -149,7 +149,7 @@ DROP TABLE IF EXISTS Brand;
 CREATE TABLE Brand (
     idBrand INTEGER PRIMARY KEY,
     BName TEXT NOT NULL,
-    Representative TEXT NOT NULL,
+    Email TEXT UNIQUE NOT NULL,
     CountryofOrigin TEXT,
     LogoURL TEXT   -- URL
 );
@@ -165,13 +165,13 @@ CREATE TABLE Collection (
 );
 
 
-DROP TABLE IF EXISTS FashionPiece;
+DROP TABLE IF EXISTS PieceofClothing;
 
-CREATE TABLE FashionPiece (
+CREATE TABLE PieceofClothing (
     idPiece INTEGER PRIMARY KEY,
     idCollectionCollection TEXT REFERENCES Collection(idCollection) NOT NULL ON UPDATE CASCADE ON DELETE RESTRICT,
     idPerson TEXT REFERENCES Designer(idPerson) NOT NULL ON UPDATE CASCADE ON DELETE RESTRICT,
-    Material TEXT,     
+    MainMaterial TEXT,     
     Color TEXT,
     Type TEXT
 );

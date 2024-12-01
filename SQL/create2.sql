@@ -193,7 +193,8 @@ CREATE TABLE Brand (
     idBrand INTEGER CONSTRAINT pk_idbrand PRIMARY KEY,
     BName TEXT  CONSTRAINT uq_bname UNIQUE 
                 CONSTRAINT nn_bname NOT NULL,
-    Representative TEXT CONSTRAINT nn_representative_brand NOT NULL,
+    Email TEXT  CONSTRAINT uq_email_brand UNIQUE 
+                CONSTRAINT nn_email_brand NOT NULL,
     CountryofOrigin TEXT,
     LogoURL TEXT
 );
@@ -211,9 +212,9 @@ CREATE TABLE Collection (
     Season TEXT CONSTRAINT nn_season_collection NOT NULL
 );
 
-DROP TABLE IF EXISTS FashionPiece;
+DROP TABLE IF EXISTS PieceofClothing;
 
-CREATE TABLE FashionPiece (
+CREATE TABLE PieceofClothing (
     idPiece INTEGER CONSTRAINT pk_idpiece_fashionpiece PRIMARY KEY,
     idCollection INTEGER    CONSTRAINT fk_idcollection_fashionpiece REFERENCES Collection(idCollection) ON UPDATE CASCADE 
                                                                                                         ON DELETE RESTRICT
@@ -221,7 +222,7 @@ CREATE TABLE FashionPiece (
     idPerson INTEGER    CONSTRAINT fk_idperson_fashionpiece REFERENCES Designer(idPerson)   ON UPDATE CASCADE 
                                                                                             ON DELETE RESTRICT
                         CONSTRAINT nn_idperson_fashionpiece NOT NULL,
-    Material TEXT,     
+    MainMaterial TEXT,     
     Color TEXT,
     Type TEXT
 );

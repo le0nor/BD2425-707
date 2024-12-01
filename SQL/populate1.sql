@@ -14,7 +14,7 @@ INSERT INTO Person (idPerson, Name, Email, Age, Nationality) VALUES (7, 'Valenti
 INSERT INTO Person (idPerson, Name, Email, Age, Nationality) VALUES (8, 'Linnea Andersson', 'linnea.andersson@yahoo.com', 27, 'Sweden'); -- influ (spectator)
 INSERT INTO Person (idPerson, Name, Email, Age, Nationality) VALUES (9, 'Charlotte Spencer', 'charspencer@hotmail.com', 23, 'UK');  -- model //
 INSERT INTO Person (idPerson, Name, Email, Age, Nationality) VALUES (10, 'Alessandra Bianchi', 'alessandra.bianchi@gmail.com', 62, 'Italy'); -- designer
-INSERT INTO Person (idPerson, Name, Email, Age, Nationality) VALUES (11, 'Mariana Santos', 'mari_santos@gmail.com', 34, NULL);   -- spectator (normal)
+INSERT INTO Person (idPerson, Name, Email, Age, Nationality) VALUES (11, 'Mariana Santos', 'Material@gmail.com', 34, NULL);   -- spectator (normal)
 INSERT INTO Person (idPerson, Name, Email, Age, Nationality) VALUES (12, 'Benjamin Carter', 'benja.carter@yahoo.com', 31, 'USA');    -- stylist (technician)
 INSERT INTO Person (idPerson, Name, Email, Age, Nationality) VALUES (13, 'Inês Ferreira', 'inesferr@hotmail.com', 27, 'Portugal');  -- influ (spectator)
 INSERT INTO Person (idPerson, Name, Email, Age, Nationality) VALUES (14, 'Petra Novaková', 'petranova@yahoo.com', 32, NULL);  -- spectator (normal)
@@ -197,9 +197,9 @@ INSERT INTO Ticket (idTicket, idShow, idPerson, Type, Status) VALUES (14, 1, 30,
 
 -- Table: Brand
 
-INSERT INTO Brand (idBrand, BName, Representative, CountryofOrigin, LogoURL) VALUES (1, 'Gucci', 'Marco Bizzarri', 'Italy', 'gucci_logo.png');
-INSERT INTO Brand (idBrand, BName, Representative, CountryofOrigin, LogoURL) VALUES (2, 'Louis Vuitton', 'Michael Burke', 'USA', 'logo.louisvuitt.png');
-INSERT INTO Brand (idBrand, BName, Representative, CountryofOrigin, LogoURL) VALUES (3, 'Prada', 'Patrizio Bertelli', 'Italy', 'pradalogo.png');
+INSERT INTO Brand (idBrand, BName, Email, CountryofOrigin, LogoURL) VALUES (1, 'Gucci', 'info@gucci.com', 'Italy', 'gucci_logo.png');
+INSERT INTO Brand (idBrand, BName, Email, CountryofOrigin, LogoURL) VALUES (2, 'Louis Vuitton', 'contact@louisvuitton.com', 'USA', 'logo.louisvuitt.png');
+INSERT INTO Brand (idBrand, BName, Email, CountryofOrigin, LogoURL) VALUES (3, 'Prada', 'contactus@prada.com', 'Italy', 'pradalogo.png');
 
 
 -- Table: Collection
@@ -211,27 +211,27 @@ INSERT INTO Collection (idCollection, CName, idBrand, Season) VALUES (4, 'Sunkis
 INSERT INTO Collection (idCollection, CName, idBrand, Season) VALUES (5, 'Gothic Garden', 3, 'Fall/Winter');
 
 
--- Table: FashionPiece
+-- Table: PieceofClothing
 
-INSERT INTO FashionPiece (idPiece, idCollection, idPerson, Material, Color, Type) VALUES (1, 1, 4, 'Silk', 'Golden Yellow', 'Blouse');
-INSERT INTO FashionPiece (idPiece, idCollection, idPerson, Material, Color, Type) VALUES (2, 1, 4, 'Silk', 'Charcoal Grey','Tailored Suit');
-INSERT INTO FashionPiece (idPiece, idCollection, idPerson, Material, Color, Type) VALUES (3, 1, 5, 'Cotton', 'Blush Pink', 'Cocktail Dress');
-INSERT INTO FashionPiece (idPiece, idCollection, idPerson, Material, Color, Type) VALUES (4, 2, 10, 'Leather', 'Camel', 'Trench Coat');
-INSERT INTO FashionPiece (idPiece, idCollection, idPerson, Material, Color, Type) VALUES (5, 2, 10, 'Tulle', 'Navy','Maxi Skirt');
-INSERT INTO FashionPiece (idPiece, idCollection, idPerson, Material, Color, Type) VALUES (6, 2, 10, 'Velvet', 'Coral', 'Ball Gown');
-INSERT INTO FashionPiece (idPiece, idCollection, idPerson, Material, Color, Type) VALUES (7, 2, 5, 'Silk', 'Ivory', 'Cargo Pants');
-INSERT INTO FashionPiece (idPiece, idCollection, idPerson, Material, Color, Type) VALUES (8, 3, 4, 'Tulle', 'Olive Graden', 'Trench Coat');
-INSERT INTO FashionPiece (idPiece, idCollection, idPerson, Material, Color, Type) VALUES (9, 3, 5, 'Cotton', 'Lavender', 'Blouse');
-INSERT INTO FashionPiece (idPiece, idCollection, idPerson, Material, Color, Type) VALUES (10, 3, 5, 'Silk', 'Midnight Blue', 'Evening Gown');
-INSERT INTO FashionPiece (idPiece, idCollection, idPerson, Material, Color, Type) VALUES (11, 3, 10, 'Velvet', 'Dark Indigo', 'Denim Jacket');
-INSERT INTO FashionPiece (idPiece, idCollection, idPerson, Material, Color, Type) VALUES (12, 4, 10, 'Cotton', 'Champagne', 'Ball Gown');
-INSERT INTO FashionPiece (idPiece, idCollection, idPerson, Material, Color, Type) VALUES (13, 4, 10, 'Cotton', 'Floral Prints', 'Kimono');
-INSERT INTO FashionPiece (idPiece, idCollection, idPerson, Material, Color, Type) VALUES (14, 4, 10, 'Leather', 'Brown', 'Boots');
-INSERT INTO FashionPiece (idPiece, idCollection, idPerson, Material, Color, Type) VALUES (15, 5, 4, 'Tulle', 'White', 'Tuxedo');
-INSERT INTO FashionPiece (idPiece, idCollection, idPerson, Material, Color, Type) VALUES (16, 5, 4, 'Velvet', 'Cream', 'Slip Dress');
-INSERT INTO FashionPiece (idPiece, idCollection, idPerson, Material, Color, Type) VALUES (17, 5, 4, 'Silk', 'Coral', 'Romper');
-INSERT INTO FashionPiece (idPiece, idCollection, idPerson, Material, Color, Type) VALUES (18, 5, 4, 'Cotton', 'Black', 'Blazer');
-INSERT INTO FashionPiece (idPiece, idCollection, idPerson, Material, Color, Type) VALUES (19, 5, 5, 'Velvet', 'Charcoal Grey', 'Sweater');
+INSERT INTO PieceofClothing (idPiece, idCollection, idPerson, MainMaterial, Color, Type) VALUES (1, 1, 4, 'Silk', 'Golden Yellow', 'Blouse');
+INSERT INTO PieceofClothing (idPiece, idCollection, idPerson, MainMaterial, Color, Type) VALUES (2, 1, 4, 'Silk', 'Charcoal Grey','Tailored Suit');
+INSERT INTO PieceofClothing (idPiece, idCollection, idPerson, MainMaterial, Color, Type) VALUES (3, 1, 5, 'Cotton', 'Blush Pink', 'Cocktail Dress');
+INSERT INTO PieceofClothing (idPiece, idCollection, idPerson, MainMaterial, Color, Type) VALUES (4, 2, 10, 'Leather', 'Camel', 'Trench Coat');
+INSERT INTO PieceofClothing (idPiece, idCollection, idPerson, MainMaterial, Color, Type) VALUES (5, 2, 10, 'Tulle', 'Navy','Maxi Skirt');
+INSERT INTO PieceofClothing (idPiece, idCollection, idPerson, MainMaterial, Color, Type) VALUES (6, 2, 10, 'Velvet', 'Coral', 'Ball Gown');
+INSERT INTO PieceofClothing (idPiece, idCollection, idPerson, MainMaterial, Color, Type) VALUES (7, 2, 5, 'Silk', 'Ivory', 'Cargo Pants');
+INSERT INTO PieceofClothing (idPiece, idCollection, idPerson, MainMaterial, Color, Type) VALUES (8, 3, 4, 'Tulle', 'Olive Graden', 'Trench Coat');
+INSERT INTO PieceofClothing (idPiece, idCollection, idPerson, MainMaterial, Color, Type) VALUES (9, 3, 5, 'Cotton', 'Lavender', 'Blouse');
+INSERT INTO PieceofClothing (idPiece, idCollection, idPerson, MainMaterial, Color, Type) VALUES (10, 3, 5, 'Silk', 'Midnight Blue', 'Evening Gown');
+INSERT INTO PieceofClothing (idPiece, idCollection, idPerson, MainMaterial, Color, Type) VALUES (11, 3, 10, 'Velvet', 'Dark Indigo', 'Denim Jacket');
+INSERT INTO PieceofClothing (idPiece, idCollection, idPerson, MainMaterial, Color, Type) VALUES (12, 4, 10, 'Cotton', 'Champagne', 'Ball Gown');
+INSERT INTO PieceofClothing (idPiece, idCollection, idPerson, MainMaterial, Color, Type) VALUES (13, 4, 10, 'Cotton', 'Floral Prints', 'Kimono');
+INSERT INTO PieceofClothing (idPiece, idCollection, idPerson, MainMaterial, Color, Type) VALUES (14, 4, 10, 'Leather', 'Brown', 'Boots');
+INSERT INTO PieceofClothing (idPiece, idCollection, idPerson, MainMaterial, Color, Type) VALUES (15, 5, 4, 'Tulle', 'White', 'Tuxedo');
+INSERT INTO PieceofClothing (idPiece, idCollection, idPerson, MainMaterial, Color, Type) VALUES (16, 5, 4, 'Velvet', 'Cream', 'Slip Dress');
+INSERT INTO PieceofClothing (idPiece, idCollection, idPerson, MainMaterial, Color, Type) VALUES (17, 5, 4, 'Silk', 'Coral', 'Romper');
+INSERT INTO PieceofClothing (idPiece, idCollection, idPerson, MainMaterial, Color, Type) VALUES (18, 5, 4, 'Cotton', 'Black', 'Blazer');
+INSERT INTO PieceofClothing (idPiece, idCollection, idPerson, MainMaterial, Color, Type) VALUES (19, 5, 5, 'Velvet', 'Charcoal Grey', 'Sweater');
 
 
 COMMIT TRANSACTION;
