@@ -48,9 +48,9 @@ INSERT INTO Model (idPerson, Bust, Waist, Hips, Height, Weight, HealthIssues) VA
 
 -- Table: Designer
 
-INSERT INTO Designer (idPerson, PhotographyURL, BiographyURL) VALUES (4, 'www.elodielaurentdesigns.com/bio', 'www.elodielaurentdesigns.com/gallery');
+INSERT INTO Designer (idPerson, PhotographyURL, BiographyURL) VALUES (4, 'www.elodielaurentdesigns.com/gallery', 'www.elodielaurentdesigns.com/bio');
 INSERT INTO Designer (idPerson, PhotographyURL, BiographyURL) VALUES (5, 'www.anastasiaivanoadesigns.com', 'www.ivanoacouture.com/about');
-INSERT INTO Designer (idPerson, PhotographyURL, BiographyURL) VALUES (10, 'www.alessandrabianchidesign.com/about', 'www.alessandrabianchidesign.com/gallery');
+INSERT INTO Designer (idPerson, PhotographyURL, BiographyURL) VALUES (10, 'www.alessandrabianchidesign.com/gallery', 'www.alessandrabianchidesign.com/about');
 
 
 -- Table: Spectator
