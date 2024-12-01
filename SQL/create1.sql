@@ -97,7 +97,7 @@ CREATE TABLE Runway (
     idBrand TEXT REFERENCES Brand(idBrand) NOT NULL ON UPDATE CASCADE ON DELETE RESTRICT,
     Date DATE NOT NULL,
     Time TIME NOT NULL,
-    Budget INTEGER DEFAULT NULL
+    RunwayBudget INTEGER DEFAULT NULL
 );
 
 
@@ -116,7 +116,7 @@ DROP TABLE IF EXISTS Event;
 CREATE TABLE Event (
     idEvent INTEGER PRIMARY KEY,
     Address TEXT NOT NULL,
-    Budget INTEGER NOT NULL,
+    EventBudget INTEGER NOT NULL,
     OrganizingCompany TEXT NOT NULL
 );
 
@@ -172,6 +172,6 @@ CREATE TABLE PieceofClothing (
     idCollectionCollection TEXT REFERENCES Collection(idCollection) NOT NULL ON UPDATE CASCADE ON DELETE RESTRICT,
     idPerson TEXT REFERENCES Designer(idPerson) NOT NULL ON UPDATE CASCADE ON DELETE RESTRICT,
     MainMaterial TEXT,     
-    Color TEXT,
+    MainColor TEXT,
     Type TEXT
 );

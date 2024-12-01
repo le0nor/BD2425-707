@@ -127,7 +127,7 @@ CREATE TABLE Runway (
                      CONSTRAINT nn_idbrand_runway NOT NULL,
     Date DATE CONSTRAINT nn_date_runway NOT NULL,
     Time TIME CONSTRAINT nn_time_runway NOT NULL,
-    Budget NUMERIC       
+    RunwayBudget NUMERIC       
 );
 
 
@@ -149,8 +149,8 @@ DROP TABLE IF EXISTS Event;
 CREATE TABLE Event (
     idEvent INTEGER CONSTRAINT pk_idevent PRIMARY KEY,
     Address TEXT CONSTRAINT nn_address_event NOT NULL,
-    Budget NUMERIC  CONSTRAINT nn_budget_event NOT NULL 
-                    CONSTRAINT chk_budget_event CHECK (Budget > 0),
+    EventBudget NUMERIC  CONSTRAINT nn_eventbudget_event NOT NULL 
+                    CONSTRAINT chk_budget_event CHECK (EventBudget > 0),
     OrganizingCompany TEXT CONSTRAINT nn_organizingcompany_event NOT NULL
 );
 
@@ -223,6 +223,6 @@ CREATE TABLE PieceofClothing (
                                                                                             ON DELETE RESTRICT
                         CONSTRAINT nn_idperson_fashionpiece NOT NULL,
     MainMaterial TEXT,     
-    Color TEXT,
+    MainColor TEXT,
     Type TEXT
 );

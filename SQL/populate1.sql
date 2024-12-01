@@ -4,33 +4,33 @@ BEGIN TRANSACTION;
 
 -- Table: Person
 
-INSERT INTO Person (idPerson, Name, Email, Age, Nationality) VALUES (1, 'Alice Smith', 'alice.smith@yahoo.com', 25, 'USA'); -- media (spectator)
-INSERT INTO Person (idPerson, Name, Email, Age, Nationality) VALUES (2, 'Bob Johnson', 'bob.johnson@gmail.com', 30, NULL);  -- spectator (normal)
-INSERT INTO Person (idPerson, Name, Email, Age, Nationality) VALUES (3, 'Charlie Lee', 'charlie.lee@gmail.com', 28, 'UK');  -- influ (spectator)
-INSERT INTO Person (idPerson, Name, Email, Age, Nationality) VALUES (4, 'Élodie Laurent', 'laurent.elodie@yahoo.com', 88, 'France');    -- designer
+INSERT INTO Person (idPerson, Name, Email, Age, Nationality) VALUES (1, 'Alice Smith', 'alice_smith@yahoo.com', 25, 'USA'); -- media (spectator)
+INSERT INTO Person (idPerson, Name, Email, Age, Nationality) VALUES (2, 'Bob Johnson', 'bob_johnson@gmail.com', 30, NULL);  -- spectator (normal)
+INSERT INTO Person (idPerson, Name, Email, Age, Nationality) VALUES (3, 'Charlie Lee', 'charlie_lee@gmail.com', 28, 'UK');  -- influ (spectator)
+INSERT INTO Person (idPerson, Name, Email, Age, Nationality) VALUES (4, 'Élodie Laurent', 'laurent_elodie@yahoo.com', 88, 'France');    -- designer
 INSERT INTO Person (idPerson, Name, Email, Age, Nationality) VALUES (5, 'Anastasia Ivanoa', 'anastasiaiva@hotmail.com', 57, 'Russia');  -- designer
 INSERT INTO Person (idPerson, Name, Email, Age, Nationality) VALUES (6, 'Wei Zhang','weizhang@icloud.com', 25, 'China'); -- model //
 INSERT INTO Person (idPerson, Name, Email, Age, Nationality) VALUES (7, 'Valentina González', 'valen_gonzalez@gmail.com', 22, 'Argentina');  -- model //
-INSERT INTO Person (idPerson, Name, Email, Age, Nationality) VALUES (8, 'Linnea Andersson', 'linnea.andersson@yahoo.com', 27, 'Sweden'); -- influ (spectator)
+INSERT INTO Person (idPerson, Name, Email, Age, Nationality) VALUES (8, 'Linnea Andersson', 'linnea_andersson@yahoo.com', 27, 'Sweden'); -- influ (spectator)
 INSERT INTO Person (idPerson, Name, Email, Age, Nationality) VALUES (9, 'Charlotte Spencer', 'charspencer@hotmail.com', 23, 'UK');  -- model //
-INSERT INTO Person (idPerson, Name, Email, Age, Nationality) VALUES (10, 'Alessandra Bianchi', 'alessandra.bianchi@gmail.com', 62, 'Italy'); -- designer
+INSERT INTO Person (idPerson, Name, Email, Age, Nationality) VALUES (10, 'Alessandra Bianchi', 'alessandra_bianchi@gmail.com', 62, 'Italy'); -- designer
 INSERT INTO Person (idPerson, Name, Email, Age, Nationality) VALUES (11, 'Mariana Santos', 'Material@gmail.com', 34, NULL);   -- spectator (normal)
-INSERT INTO Person (idPerson, Name, Email, Age, Nationality) VALUES (12, 'Benjamin Carter', 'benja.carter@yahoo.com', 31, 'USA');    -- stylist (technician)
+INSERT INTO Person (idPerson, Name, Email, Age, Nationality) VALUES (12, 'Benjamin Carter', 'benja_carter@yahoo.com', 31, 'USA');    -- stylist (technician)
 INSERT INTO Person (idPerson, Name, Email, Age, Nationality) VALUES (13, 'Inês Ferreira', 'inesferr@hotmail.com', 27, 'Portugal');  -- influ (spectator)
 INSERT INTO Person (idPerson, Name, Email, Age, Nationality) VALUES (14, 'Petra Novaková', 'petranova@yahoo.com', 32, NULL);  -- spectator (normal)
 INSERT INTO Person (idPerson, Name, Email, Age, Nationality) VALUES (15, 'Simon De Clercq', 'simondeclercq@gmail.com', 27, 'Belgium');  -- local (technician)
-INSERT INTO Person (idPerson, Name, Email, Age, Nationality) VALUES (16, 'Wei Ling Tan', 'wei.ling.tan@hotmail.com', 35, 'Singapore');  -- stylist (technician)
+INSERT INTO Person (idPerson, Name, Email, Age, Nationality) VALUES (16, 'Wei Ling Tan', 'wei_ling_tan@hotmail.com', 35, 'Singapore');  -- stylist (technician)
 INSERT INTO Person (idPerson, Name, Email, Age, Nationality) VALUES (17, 'Daniela Meier', 'dani_meier@yahoo.com', 27, NULL);   -- spectator (normal)
-INSERT INTO Person (idPerson, Name, Email, Age, Nationality) VALUES (18, 'Pierre Dupont', 'duppont.pierre@gmail.com', 42, 'France');    -- media (spectator)
+INSERT INTO Person (idPerson, Name, Email, Age, Nationality) VALUES (18, 'Pierre Dupont', 'duppont_pierre@gmail.com', 42, 'France');    -- media (spectator)
 INSERT INTO Person (idPerson, Name, Email, Age, Nationality) VALUES (19, 'Clara Martinez', 'matinezcla@hotmail.com', 21, NULL);  -- spectator (normal)
-INSERT INTO Person (idPerson, Name, Email, Age, Nationality) VALUES (20, 'Elise Van Damme', 'elise.vandamme@icloud.com', 25, 'Belgium');    -- influ (spectator)
+INSERT INTO Person (idPerson, Name, Email, Age, Nationality) VALUES (20, 'Elise Van Damme', 'elise_vandamme@icloud.com', 25, 'Belgium');    -- influ (spectator)
 INSERT INTO Person (idPerson, Name, Email, Age, Nationality) VALUES (21, 'Camile Moreau', 'cami_moreau@hotmail.com', 23, 'France'); -- influ (spectator)
 INSERT INTO Person (idPerson, Name, Email, Age, Nationality) VALUES (22, 'Giulia Romano', 'giuromano@yahoo.com', 29, 'Italy');  --  model //
 INSERT INTO Person (idPerson, Name, Email, Age, Nationality) VALUES (23, 'Mikko Nieminen', 'mikkom@gmail.com', 37, 'Finland');  -- local (technician)
 INSERT INTO Person (idPerson, Name, Email, Age, Nationality) VALUES (24, 'Anna Wagner', 'wagner_anna@yahoo.com', 19, 'Austria');    -- model //
 INSERT INTO Person (idPerson, Name, Email, Age, Nationality) VALUES (25, 'Isabel Fuentes', 'belfuentes@gmail.com', 26, 'Chile');    -- stylist (technician)
-INSERT INTO Person (idPerson, Name, Email, Age, Nationality) VALUES (26, 'Martina Aguilar', 'aguilar.martina', 32, 'Argentina');    -- stylist (technician)
-INSERT INTO Person (idPerson, Name, Email, Age, Nationality) VALUES (27, 'Rafael Lima', 'rafa.lima@gmail.com', 43, 'Brazil');   -- local (technician)
+INSERT INTO Person (idPerson, Name, Email, Age, Nationality) VALUES (26, 'Martina Aguilar', 'aguilar_martina', 32, 'Argentina');    -- stylist (technician)
+INSERT INTO Person (idPerson, Name, Email, Age, Nationality) VALUES (27, 'Rafael Lima', 'rafa_lima@gmail.com', 43, 'Brazil');   -- local (technician)
 INSERT INTO Person (idPerson, Name, Email, Age, Nationality) VALUES (28, 'Lili Huang', 'lilhuang@hotmail.com', 24, 'South Corea');  -- model //
 INSERT INTO Person (idPerson, Name, Email, Age, Nationality) VALUES (29, 'Olivia Bennet', 'bennetoliv@yahoo.com', 20, 'UK');    -- influ (spectator)
 INSERT INTO Person (idPerson, Name, Email, Age, Nationality) VALUES (30, 'Camila Ramos', 'camila_ramos@gmail.com', 34, 'Mexico');   -- media (spectator)
@@ -48,9 +48,9 @@ INSERT INTO Model (idPerson, Bust, Waist, Hips, Height, Weight, HealthIssues) VA
 
 -- Table: Designer
 
-INSERT INTO Designer (idPerson, PhotographyURL, BiographyURL) VALUES (4, 'www.elodielaurentdesigns.com/gallery', 'www.elodielaurentdesigns.com/bio');
+INSERT INTO Designer (idPerson, PhotographyURL, BiographyURL) VALUES (4, 'www.elodielaurentdesigns.com/bio', 'www.elodielaurentdesigns.com/gallery');
 INSERT INTO Designer (idPerson, PhotographyURL, BiographyURL) VALUES (5, 'www.anastasiaivanoadesigns.com', 'www.ivanoacouture.com/about');
-INSERT INTO Designer (idPerson, PhotographyURL, BiographyURL) VALUES (10, 'www.alessandrabianchidesign.com/gallery', 'www.alessandrabianchidesign.com/about');
+INSERT INTO Designer (idPerson, PhotographyURL, BiographyURL) VALUES (10, 'www.alessandrabianchidesign.com/about', 'www.alessandrabianchidesign.com/gallery');
 
 
 -- Table: Spectator
@@ -130,42 +130,42 @@ INSERT INTO Model_Stylist (idModel, idStylist) VALUES (28, 12);
 
 -- Table: Runway
 
-INSERT INTO Runway (idShow, idEvent, idBrand, Date, Time, Budget) VALUES (1, 1, 2, '2025-02-25', '10:00:00', 150000);
-INSERT INTO Runway (idShow, idEvent, idBrand, Date, Time, Budget) VALUES (2, 3, 1, '2025-09-27', '14:00:00', 500000);
-INSERT INTO Runway (idShow, idEvent, idBrand, Date, Time, Budget) VALUES (3, 2, 1, '2024-02-08', '18:00:00', 700000);
-INSERT INTO Runway (idShow, idEvent, idBrand, Date, Time, Budget) VALUES (4, 2, 3, '2024-03-02', '10:00:00', 400000);
-INSERT INTO Runway (idShow, idEvent, idBrand, Date, Time, Budget) VALUES (5, 1, 2, '2024-02-07', '21:00:00', 1000000);
+INSERT INTO Runway (idShow, idEvent, idBrand, Date, Time, RunwayBudget) VALUES (1, 1, 2, '2025-02-25', '10:00:00', 150000);
+INSERT INTO Runway (idShow, idEvent, idBrand, Date, Time, RunwayBudget) VALUES (2, 3, 1, '2025-09-27', '14:00:00', 500000);
+INSERT INTO Runway (idShow, idEvent, idBrand, Date, Time, RunwayBudget) VALUES (3, 2, 1, '2024-02-08', '18:00:00', 700000);
+INSERT INTO Runway (idShow, idEvent, idBrand, Date, Time, RunwayBudget) VALUES (4, 2, 3, '2024-03-02', '10:00:00', 400000);
+INSERT INTO Runway (idShow, idEvent, idBrand, Date, Time, RunwayBudget) VALUES (5, 1, 2, '2024-02-07', '21:00:00', 1000000);
 
 
 -- Table: Model_Runway
 
-INSERT INTO Model_Runway (idShow, idModel, Order) VALUES (1, 22, 1);
-INSERT INTO Model_Runway (idShow, idModel, Order) VALUES (1, 9, 2);
-INSERT INTO Model_Runway (idShow, idModel, Order) VALUES (1, 6, 3);
-INSERT INTO Model_Runway (idShow, idModel, Order) VALUES (1, 28, 4);
-INSERT INTO Model_Runway (idShow, idModel, Order) VALUES (2, 9, 1);
-INSERT INTO Model_Runway (idShow, idModel, Order) VALUES (2, 28, 2);
-INSERT INTO Model_Runway (idShow, idModel, Order) VALUES (2, 24, 3);
-INSERT INTO Model_Runway (idShow, idModel, Order) VALUES (2, 6, 4);
-INSERT INTO Model_Runway (idShow, idModel, Order) VALUES (2, 7, 5);
-INSERT INTO Model_Runway (idShow, idModel, Order) VALUES (3, 22, 1);
-INSERT INTO Model_Runway (idShow, idModel, Order) VALUES (3, 9, 2);
-INSERT INTO Model_Runway (idShow, idModel, Order) VALUES (3, 7, 3);
-INSERT INTO Model_Runway (idShow, idModel, Order) VALUES (4, 24, 1);
-INSERT INTO Model_Runway (idShow, idModel, Order) VALUES (4, 9, 2);
-INSERT INTO Model_Runway (idShow, idModel, Order) VALUES (4, 22, 3);
-INSERT INTO Model_Runway (idShow, idModel, Order) VALUES (4, 6, 4);
-INSERT INTO Model_Runway (idShow, idModel, Order) VALUES (5, 6, 1);
-INSERT INTO Model_Runway (idShow, idModel, Order) VALUES (5, 28, 2);
-INSERT INTO Model_Runway (idShow, idModel, Order) VALUES (5, 9, 3);
-INSERT INTO Model_Runway (idShow, idModel, Order) VALUES (5, 22, 4);
+INSERT INTO Model_Runway (idShow, idModel, "Order") VALUES (1, 22, 1);
+INSERT INTO Model_Runway (idShow, idModel, "Order") VALUES (1, 9, 2);
+INSERT INTO Model_Runway (idShow, idModel, "Order") VALUES (1, 6, 3);
+INSERT INTO Model_Runway (idShow, idModel, "Order") VALUES (1, 28, 4);
+INSERT INTO Model_Runway (idShow, idModel, "Order") VALUES (2, 9, 1);
+INSERT INTO Model_Runway (idShow, idModel, "Order") VALUES (2, 28, 2);
+INSERT INTO Model_Runway (idShow, idModel, "Order") VALUES (2, 24, 3);
+INSERT INTO Model_Runway (idShow, idModel, "Order") VALUES (2, 6, 4);
+INSERT INTO Model_Runway (idShow, idModel, "Order") VALUES (2, 7, 5);
+INSERT INTO Model_Runway (idShow, idModel, "Order") VALUES (3, 22, 1);
+INSERT INTO Model_Runway (idShow, idModel, "Order") VALUES (3, 9, 2);
+INSERT INTO Model_Runway (idShow, idModel, "Order") VALUES (3, 7, 3);
+INSERT INTO Model_Runway (idShow, idModel, "Order") VALUES (4, 24, 1);
+INSERT INTO Model_Runway (idShow, idModel, "Order") VALUES (4, 9, 2);
+INSERT INTO Model_Runway (idShow, idModel, "Order") VALUES (4, 22, 3);
+INSERT INTO Model_Runway (idShow, idModel, "Order") VALUES (4, 6, 4);
+INSERT INTO Model_Runway (idShow, idModel, "Order") VALUES (5, 6, 1);
+INSERT INTO Model_Runway (idShow, idModel, "Order") VALUES (5, 28, 2);
+INSERT INTO Model_Runway (idShow, idModel, "Order") VALUES (5, 9, 3);
+INSERT INTO Model_Runway (idShow, idModel, "Order") VALUES (5, 22, 4);
 
 
 -- Table: Event
 
-INSERT INTO Event (idEvent, Address, Budget, OrganizingCompany) VALUES (1, '99 Rue de Rivoli, 75001 Paris, France', 2000000, 'French Federation of Fashion'); -- spring/summer
-INSERT INTO Event (idEvent, Address, Budget, OrganizingCompany) VALUES (2, 'Viale Puglie, 10, 20131 Milano MI, Italy', 2000500, 'Camera Nazionale della Moda Italiana'); -- spring/summer
-INSERT INTO Event (idEvent, Address, Budget, OrganizingCompany) VALUES (3, 'Via Bergognone, 40, 20144 Milano MI, Italy', 1000000, 'Camera Nazionale della Moda Italiana'); -- fall/winter
+INSERT INTO Event (idEvent, Address, EventBudget, OrganizingCompany) VALUES (1, '99 Rue de Rivoli, 75001 Paris, France', 2000000, 'French Federation of Fashion'); -- spring/summer
+INSERT INTO Event (idEvent, Address, EventBudget, OrganizingCompany) VALUES (2, 'Viale Puglie, 10, 20131 Milano MI, Italy', 2000500, 'Camera Nazionale della Moda Italiana'); -- spring/summer
+INSERT INTO Event (idEvent, Address, EventBudget, OrganizingCompany) VALUES (3, 'Via Bergognone, 40, 20144 Milano MI, Italy', 1000000, 'Camera Nazionale della Moda Italiana'); -- fall/winter
 
 
 -- Table: Sponsor
@@ -213,25 +213,25 @@ INSERT INTO Collection (idCollection, CName, idBrand, Season) VALUES (5, 'Gothic
 
 -- Table: PieceofClothing
 
-INSERT INTO PieceofClothing (idPiece, idCollection, idPerson, MainMaterial, Color, Type) VALUES (1, 1, 4, 'Silk', 'Golden Yellow', 'Blouse');
-INSERT INTO PieceofClothing (idPiece, idCollection, idPerson, MainMaterial, Color, Type) VALUES (2, 1, 4, 'Silk', 'Charcoal Grey','Tailored Suit');
-INSERT INTO PieceofClothing (idPiece, idCollection, idPerson, MainMaterial, Color, Type) VALUES (3, 1, 5, 'Cotton', 'Blush Pink', 'Cocktail Dress');
-INSERT INTO PieceofClothing (idPiece, idCollection, idPerson, MainMaterial, Color, Type) VALUES (4, 2, 10, 'Leather', 'Camel', 'Trench Coat');
-INSERT INTO PieceofClothing (idPiece, idCollection, idPerson, MainMaterial, Color, Type) VALUES (5, 2, 10, 'Tulle', 'Navy','Maxi Skirt');
-INSERT INTO PieceofClothing (idPiece, idCollection, idPerson, MainMaterial, Color, Type) VALUES (6, 2, 10, 'Velvet', 'Coral', 'Ball Gown');
-INSERT INTO PieceofClothing (idPiece, idCollection, idPerson, MainMaterial, Color, Type) VALUES (7, 2, 5, 'Silk', 'Ivory', 'Cargo Pants');
-INSERT INTO PieceofClothing (idPiece, idCollection, idPerson, MainMaterial, Color, Type) VALUES (8, 3, 4, 'Tulle', 'Olive Graden', 'Trench Coat');
-INSERT INTO PieceofClothing (idPiece, idCollection, idPerson, MainMaterial, Color, Type) VALUES (9, 3, 5, 'Cotton', 'Lavender', 'Blouse');
-INSERT INTO PieceofClothing (idPiece, idCollection, idPerson, MainMaterial, Color, Type) VALUES (10, 3, 5, 'Silk', 'Midnight Blue', 'Evening Gown');
-INSERT INTO PieceofClothing (idPiece, idCollection, idPerson, MainMaterial, Color, Type) VALUES (11, 3, 10, 'Velvet', 'Dark Indigo', 'Denim Jacket');
-INSERT INTO PieceofClothing (idPiece, idCollection, idPerson, MainMaterial, Color, Type) VALUES (12, 4, 10, 'Cotton', 'Champagne', 'Ball Gown');
-INSERT INTO PieceofClothing (idPiece, idCollection, idPerson, MainMaterial, Color, Type) VALUES (13, 4, 10, 'Cotton', 'Floral Prints', 'Kimono');
-INSERT INTO PieceofClothing (idPiece, idCollection, idPerson, MainMaterial, Color, Type) VALUES (14, 4, 10, 'Leather', 'Brown', 'Boots');
-INSERT INTO PieceofClothing (idPiece, idCollection, idPerson, MainMaterial, Color, Type) VALUES (15, 5, 4, 'Tulle', 'White', 'Tuxedo');
-INSERT INTO PieceofClothing (idPiece, idCollection, idPerson, MainMaterial, Color, Type) VALUES (16, 5, 4, 'Velvet', 'Cream', 'Slip Dress');
-INSERT INTO PieceofClothing (idPiece, idCollection, idPerson, MainMaterial, Color, Type) VALUES (17, 5, 4, 'Silk', 'Coral', 'Romper');
-INSERT INTO PieceofClothing (idPiece, idCollection, idPerson, MainMaterial, Color, Type) VALUES (18, 5, 4, 'Cotton', 'Black', 'Blazer');
-INSERT INTO PieceofClothing (idPiece, idCollection, idPerson, MainMaterial, Color, Type) VALUES (19, 5, 5, 'Velvet', 'Charcoal Grey', 'Sweater');
+INSERT INTO PieceofClothing (idPiece, idCollection, idPerson, MainMaterial, MainColor, Type) VALUES (1, 1, 4, 'Silk', 'Golden Yellow', 'Blouse');
+INSERT INTO PieceofClothing (idPiece, idCollection, idPerson, MainMaterial, MainColor, Type) VALUES (2, 1, 4, 'Silk', 'Charcoal Grey','Tailored Suit');
+INSERT INTO PieceofClothing (idPiece, idCollection, idPerson, MainMaterial, MainColor, Type) VALUES (3, 1, 5, 'Cotton', 'Blush Pink', 'Cocktail Dress');
+INSERT INTO PieceofClothing (idPiece, idCollection, idPerson, MainMaterial, MainColor, Type) VALUES (4, 2, 10, 'Leather', 'Camel', 'Trench Coat');
+INSERT INTO PieceofClothing (idPiece, idCollection, idPerson, MainMaterial, MainColor, Type) VALUES (5, 2, 10, 'Tulle', 'Navy','Maxi Skirt');
+INSERT INTO PieceofClothing (idPiece, idCollection, idPerson, MainMaterial, MainColor, Type) VALUES (6, 2, 10, 'Velvet', 'Coral', 'Ball Gown');
+INSERT INTO PieceofClothing (idPiece, idCollection, idPerson, MainMaterial, MainColor, Type) VALUES (7, 2, 5, 'Silk', 'Ivory', 'Cargo Pants');
+INSERT INTO PieceofClothing (idPiece, idCollection, idPerson, MainMaterial, MainColor, Type) VALUES (8, 3, 4, 'Tulle', 'Olive Graden', 'Trench Coat');
+INSERT INTO PieceofClothing (idPiece, idCollection, idPerson, MainMaterial, MainColor, Type) VALUES (9, 3, 5, 'Cotton', 'Lavender', 'Blouse');
+INSERT INTO PieceofClothing (idPiece, idCollection, idPerson, MainMaterial, MainColor, Type) VALUES (10, 3, 5, 'Silk', 'Midnight Blue', 'Evening Gown');
+INSERT INTO PieceofClothing (idPiece, idCollection, idPerson, MainMaterial, MainColor, Type) VALUES (11, 3, 10, 'Velvet', 'Dark Indigo', 'Denim Jacket');
+INSERT INTO PieceofClothing (idPiece, idCollection, idPerson, MainMaterial, MainColor, Type) VALUES (12, 4, 10, 'Cotton', 'Champagne', 'Ball Gown');
+INSERT INTO PieceofClothing (idPiece, idCollection, idPerson, MainMaterial, MainColor, Type) VALUES (13, 4, 10, 'Cotton', 'Floral Prints', 'Kimono');
+INSERT INTO PieceofClothing (idPiece, idCollection, idPerson, MainMaterial, MainColor, Type) VALUES (14, 4, 10, 'Leather', 'Brown', 'Boots');
+INSERT INTO PieceofClothing (idPiece, idCollection, idPerson, MainMaterial, MainColor, Type) VALUES (15, 5, 4, 'Tulle', 'White', 'Tuxedo');
+INSERT INTO PieceofClothing (idPiece, idCollection, idPerson, MainMaterial, MainColor, Type) VALUES (16, 5, 4, 'Velvet', 'Cream', 'Slip Dress');
+INSERT INTO PieceofClothing (idPiece, idCollection, idPerson, MainMaterial, MainColor, Type) VALUES (17, 5, 4, 'Silk', 'Coral', 'Romper');
+INSERT INTO PieceofClothing (idPiece, idCollection, idPerson, MainMaterial, MainColor, Type) VALUES (18, 5, 4, 'Cotton', 'Black', 'Blazer');
+INSERT INTO PieceofClothing (idPiece, idCollection, idPerson, MainMaterial, MainColor, Type) VALUES (19, 5, 5, 'Velvet', 'Charcoal Grey', 'Sweater');
 
 
 COMMIT TRANSACTION;
