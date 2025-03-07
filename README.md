@@ -13,6 +13,6 @@ The purpose of this project was to design a database for a scenario chosen by th
 
 >**First Submission:** 18.2 (40%)
 
->**Second Submission:** 
+>**Second Submission:** 18.4 (60%)
 
-**Project Grade:** 
+**Project Grade:** 18.3
